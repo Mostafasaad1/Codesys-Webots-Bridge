@@ -7,4 +7,4 @@ New-Item -ItemType Directory -Force -Path "generated\webots"
 
 Write-Host "✓ Directories created successfully!" -ForegroundColor Green
 Write-Host ""
-Write-Host "Now run: .\unified_codegen.exe schemas\puma560.json" -ForegroundColor Cyan
+Write-Host "Now run: .\RobotCodeGenerator.exe schemas\puma560.json" -ForegroundColor Cyan

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP20 Patch 3" creationDateTime="2026-01-30T19:43:14.0000000" />
+  <contentHeader name="Generated_UR10eControl" modificationDateTime="2026-01-30T19:43:14.0000000">
+    <coordinateInfo>
+      <fbd><scaling x="1" y="1" /></fbd>
+      <ld><scaling x="1" y="1" /></ld>
+      <sfc><scaling x="1" y="1" /></sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes>
+      <dataType name="ST_UR10eControl">
+        <baseType>
+          <struct>
+            <variable name="ToCPP"><type><derived name="ST_ToCPP" /></type></variable>
+            <variable name="FromCPP"><type><derived name="ST_FromCPP" /></type></variable>
+            <variable name="LifePLC"><type><DINT /></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml"> PLC heartbeat counter </xhtml></documentation></variable>
+            <variable name="LifeCPP"><type><DINT /></type><documentation><xhtml xmlns="http://www.w3.org/1999/xhtml"> C++ heartbeat counter </xhtml></documentation></variable>
+          </struct>
+        </baseType>
+        <addData><data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard"><ObjectId>faad68ca-f395-403a-9b97-c279fd2be4e1</ObjectId></data></addData>
+      </dataType>
+      <dataType name="ST_ToCPP">
+        <baseType>
+          <struct>
+            <variable name="shoulder_pan_joint">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="shoulder_lift_joint">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="elbow_joint">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="wrist_1_joint">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="wrist_2_joint">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="wrist_3_joint">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+          </struct>
+        </baseType>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>d2ba4069-ddf7-4280-a7ed-643772f102ba</ObjectId>
+          </data>
+        </addData>
+      </dataType>
+      <dataType name="ST_FromCPP">
+        <baseType>
+          <struct>
+            <variable name="shoulder_pan_joint_sensor">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="shoulder_lift_joint_sensor">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="elbow_joint_sensor">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="wrist_1_joint_sensor">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="wrist_2_joint_sensor">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+            <variable name="wrist_3_joint_sensor">
+              <type>
+                <LREAL />
+              </type>
+            </variable>
+          </struct>
+        </baseType>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>570bbf3b-0acd-4310-a3f8-e96c4370ae62</ObjectId>
+          </data>
+        </addData>
+      </dataType>
+    </dataTypes>
+    <pous />
+  </types>
+  <instances><configurations /></instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="ST_UR10eControl" ObjectId="faad68ca-f395-403a-9b97-c279fd2be4e1" />
+        <Object Name="ST_ToCPP" ObjectId="d2ba4069-ddf7-4280-a7ed-643772f102ba" />
+        <Object Name="ST_FromCPP" ObjectId="570bbf3b-0acd-4310-a3f8-e96c4370ae62" />
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

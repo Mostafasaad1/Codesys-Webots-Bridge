@@ -11,21 +11,31 @@
 
 **Generate files:**
 ```powershell
-.\unified_codegen.exe schemas\puma560.json
+.\RobotCodeGenerator.exe schemas\puma560.json
 ```
 
 ## Output Structure
 
 ```
-generated/
-├── codesys/
-│   └── puma560control_Types.xml    ← Import to CODESYS
-├── webots/
-│   ├── puma560control_types.hpp     ← C++ types
-│   ├── puma560control_client.hpp    ← C++ client
-│   └── puma560control_controller.cpp ← Webots controller
-└── README_puma560control.md         ← Detailed usage guide
+generated/          ← Output folder for generated code
+schemas/            ← JSON schemas for robots
+src/                ← Source code (.cpp)
+include/            ← Header files (.hpp)
+build/              ← Compilation artifacts
+Makefile            ← Build script
+RobotCodeGenerator.exe ← Main executable
 ```
+
+## Building
+
+```powershell
+make
+# OR
+g++ -std=c++17 -Iinclude -o RobotCodeGenerator.exe src/main.cpp
+```
+
+## Quick Start
+
 
 ## Complete Workflow
 
