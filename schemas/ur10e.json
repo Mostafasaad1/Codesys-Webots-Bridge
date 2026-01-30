@@ -1,0 +1,65 @@
+{
+    "name": "UR10eControl",
+    "variables": [
+        {
+            "name": "shoulder_pan_joint",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "shoulder_lift_joint",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "elbow_joint",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "wrist_1_joint",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "wrist_2_joint",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "wrist_3_joint",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "shoulder_pan_joint_sensor",
+            "type": "LREAL",
+            "direction": "fromCPP"
+        },
+        {
+            "name": "shoulder_lift_joint_sensor",
+            "type": "LREAL",
+            "direction": "fromCPP"
+        },
+        {
+            "name": "elbow_joint_sensor",
+            "type": "LREAL",
+            "direction": "fromCPP"
+        },
+        {
+            "name": "wrist_1_joint_sensor",
+            "type": "LREAL",
+            "direction": "fromCPP"
+        },
+        {
+            "name": "wrist_2_joint_sensor",
+            "type": "LREAL",
+            "direction": "fromCPP"
+        },
+        {
+            "name": "wrist_3_joint_sensor",
+            "type": "LREAL",
+            "direction": "fromCPP"
+        }
+    ]
+}

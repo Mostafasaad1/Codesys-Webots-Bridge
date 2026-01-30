@@ -1,0 +1,6 @@
+generated/
+build/
+*.exe
+*.obj
+*.pdb
+*.ilk

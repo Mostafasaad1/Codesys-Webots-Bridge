@@ -1,0 +1,11 @@
+{
+  "name": "StaubliTx60Control",
+  "variables": [
+    {"name": "joint_1", "type": "LREAL", "direction": "toCPP"},
+    {"name": "joint_2", "type": "LREAL", "direction": "toCPP"},
+    {"name": "joint_3", "type": "LREAL", "direction": "toCPP"},
+    {"name": "joint_4", "type": "LREAL", "direction": "toCPP"},
+    {"name": "joint_5", "type": "LREAL", "direction": "toCPP"},
+    {"name": "joint_6", "type": "LREAL", "direction": "toCPP"}
+  ]
+}

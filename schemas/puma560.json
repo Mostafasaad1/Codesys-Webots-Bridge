@@ -1,0 +1,35 @@
+{
+    "name": "Puma560Control",
+    "variables": [
+        {
+            "name": "joint1",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "joint2",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "joint3",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "joint4",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "joint5",
+            "type": "LREAL",
+            "direction": "toCPP"
+        },
+        {
+            "name": "joint6",
+            "type": "LREAL",
+            "direction": "toCPP"
+        }
+    ]
+}
