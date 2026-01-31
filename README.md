@@ -15,6 +15,10 @@
 ```powershell
 .\CodesysWebotsBridge.exe schemas\puma560.json
 ```
+## Tools
+1. Webots 2025a
+2. Codesys V3.5 SP20+
+3. Msys64 ( for building the C++ code)
 
 ## Demos
 
@@ -55,7 +59,7 @@ make
 windres src/resource.rc -O coff -o build/resource.o
 g++ -std=c++17 -Iinclude -o CodesysWebotsBridge.exe src/main.cpp build/resource.o
 ```
-```
+
 
 ## Quick Start
 
@@ -65,7 +69,7 @@ g++ -std=c++17 -Iinclude -o CodesysWebotsBridge.exe src/main.cpp build/resource.
 1. **Setup** (once): `.\setup.ps1`
 2. **Write Your Robot JSON schema**: `schemas\YourRobot.json`
 3. **Generate**: `.\CodesysWebotsBridge.exe schemas\YourRobot.json`
-4. **CODESYS**: Import `generated/codesys/*.xml` & add ToWebots Library to your project 
+4. **CODESYS**: Import `generated/codesys/*.xml` & add ToWebots Library to your project libraries 
 5. **Webots**: Copy `generated/webots/*` to controller directory
 6. **Docs**: Follow Auto Generated Documentation in `generated/` for your robot
 
@@ -79,11 +83,11 @@ g++ -std=c++17 -Iinclude -o CodesysWebotsBridge.exe src/main.cpp build/resource.
 
 ## Benefits
 
-✅ All files from one command  
-✅ Organized output structure  
-✅ C++ and Webots files together  
-✅ Auto-generated documentation
-✅ You can add your custom robot to Webots and drive it from codesys as well
+- All files from one command  
+- Organized output structure  
+- C++ and Webots files together  
+- Auto-generated documentation
+- You can add your custom robot to Webots and drive it from codesys as well
 ---
 
 **Troubleshooting:**
