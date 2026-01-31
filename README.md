@@ -1,95 +1,119 @@
 # Codesys-Webots Bridge
 
-![Logo](Media/Logo.png)
+<div align="center">
+  <img src="Media/Logo.png" alt="Logo" width="200"/>
+  
+  <br/>
+  
+  **Seamlessly bridge CODESYS and Webots for industrial robot visualization and control.**
+  
+  [![CODESYS](https://img.shields.io/badge/CODESYS-V3.5%20SP20%2B-red)](https://www.codesys.com/)
+  [![Webots](https://img.shields.io/badge/Webots-2025a-blue)](https://cyberbotics.com/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+  [Features](#features) • [Quick Start](#quick-start) • [Demos](#demos) • [Building](#building)
+</div>
+
+---
+
+## Overview
 
 **One Command → Everything!**
 
+This tool acts as a unified code generator, creating Webots controllers and CODESYS libraries from a simple JSON schema. Visualize mechanisms, simulate physics, and drive robots directly from your PLC code using shared memory.
+
+## Features
+
+- **Automated Generation**: Create C++ controllers and PLCopenXML files from a single JSON schema.
+- **Shared Memory Bridge**: Zero-latency communication between CODESYS and Webots.
+- **Unified Workflow**: Define your robot once, deploy to both environments.
+- **Documentation**: Auto-generated guides for every new robot you create.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+1. **Webots 2025a** (or compatible version)
+2. **CODESYS V3.5 SP20+**
+3. **Msys64** (MinGW-w64) for building the C++ code
+
 ## Quick Start
 
-**First time setup** (run once):
+### 1. Initial Setup (Run Once)
+Run the setup script to create necessary output directories:
 ```powershell
 .\setup.ps1
 ```
 
-**Generate files:**
+### 2. Generate Files
+Generate the bridge code for your robot (e.g., Puma560):
 ```powershell
 .\CodesysWebotsBridge.exe schemas\puma560.json
 ```
-## Tools
-1. Webots 2025a
-2. Codesys V3.5 SP20+
-3. Msys64 ( for building the C++ code)
 
-## Demos
-
-### 1. Puma560 Control from CODESYS
-Direct control of Puma560 joints from CODESYS.
-<video src="Media/preview.mp4" controls width="100%"></video>
-
-### 2. Puma Jogging with Robotics Library
-Using CODESYS SoftMotion/Robotics library for jogging & HMI ( forward kinematics [x,y,z, roll, pitch, yaw]).
-<video src="Media/preview2.mp4" controls width="100%"></video>
-
-### 3. Dual UR10e Control
-Controlling two UR10e robots simultaneously from a single CODESYS session.
-<video src="Media/preview3.mp4" controls width="100%"></video>
+### 3. Integrated Workflow
+1.  **Write Schema**: Create your robot definition in `schemas/YourRobot.json`.
+2.  **Generate**: Run the tool as shown above.
+3.  **CODESYS**: Import `generated/codesys/*.xml` and add the "ToWebots" library to your project.
+4.  **Webots**: Copy `generated/webots/*` to your Webots project's controller directory.
+5.  **Simulate**: Start Webots and login to your CODESYS controller.
 
 ## Output Structure
 
-```
-generated/          ← Output folder for generated code
-schemas/            ← JSON schemas for robots
-src/                ← Source code (.cpp)
-include/            ← Header files (.hpp)
-build/              ← Compilation artifacts
-Makefile            ← Build script
-CodesysWebotsBridge.exe ← Main executable
-```
+The tool organizes generated files into a clean structure:
 
-## Building
+| Directory/File | Description |
+| :--- | :--- |
+| `generated/` | Output folder for all generated code |
+| `schemas/` | JSON schemas for robot definitions |
+| `src/` | Source code for the bridge tool (`main.cpp`) |
+| `include/` | Header files (`UnifiedCodeGenerator.hpp`) |
+| `build/` | Compilation artifacts |
+| `Makefile` | Build configuration |
+| `CodesysWebotsBridge.exe` | **Main Executable** |
+
+## Demos
+
+<div align="center">
+
+### Puma560 Control
+*Direct joint control from CODESYS*
+<br/>
+<video src="Media/preview.mp4" controls width="80%"></video>
+
+<br/>
+
+### Robotics Library Jogging
+*Inverse kinematics and jogging with CODESYS SoftMotion*
+<br/>
+<video src="Media/preview2.mp4" controls width="80%"></video>
+
+<br/>
+
+### Dual UR10e Control
+*Synchronized control of two robots*
+<br/>
+<video src="Media/preview3.mp4" controls width="80%"></video>
+
+</div>
+
+## Building from Source
+
+If you want to modify the tool itself:
 
 ```powershell
-# Option 1: Using Make (if installed)
+# Option 1: Using Make
 make
 
-# Option 2: Using build script (Windows Bundle)
+# Option 2: Using Build Script
 .\build.bat
 
-# Option 3: Manual Command
+# Option 3: Manual Compilation
 windres src/resource.rc -O coff -o build/resource.o
 g++ -std=c++17 -Iinclude -o CodesysWebotsBridge.exe src/main.cpp build/resource.o
 ```
 
+## Troubleshooting
 
-## Quick Start
-
-
-## Complete Workflow
-
-1. **Setup** (once): `.\setup.ps1`
-2. **Write Your Robot JSON schema**: `schemas\YourRobot.json`
-3. **Generate**: `.\CodesysWebotsBridge.exe schemas\YourRobot.json`
-4. **CODESYS**: Import `generated/codesys/*.xml` & add ToWebots Library to your project libraries 
-5. **Webots**: Copy `generated/webots/*` to controller directory
-6. **Docs**: Follow Auto Generated Documentation in `generated/` for your robot
-
-## Files
-
-- `src/` - Source code (`main.cpp`)
-- `include/` - Header files (`UnifiedCodeGenerator.hpp`, etc.)
-- `CodesysWebotsBridge.exe` - Main executable  
-- `setup.ps1` - Create output directories
-- `schemas/` - Example JSON schemas
-
-## Benefits
-
-- All files from one command  
-- Organized output structure  
-- C++ and Webots files together  
-- Auto-generated documentation
-- You can add your custom robot to Webots and drive it from codesys as well
----
-
-**Troubleshooting:**
-- If no files appear → Run `.\setup.ps1` first
-- Need custom schema → See `schemas/puma560.json` for format
+- **No files generated?** Ensure you ran `.\setup.ps1` first.
+- **Custom Schema Issues?** Refer to `schemas/puma560.json` as a template.
