@@ -9,16 +9,21 @@ OBJ_DIR = build
 # Files
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
-TARGET = RobotCodeGenerator.exe
+RC = src/resource.rc
+RES = $(OBJ_DIR)/resource.o
+TARGET = CodesysWebotsBridge.exe
 
 # Targets
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+$(TARGET): $(OBJS) $(RES)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(RES)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+$(RES): $(RC)
+	windres $< -O coff -o $@
 
 clean:
 	del /Q build\*.o $(TARGET)

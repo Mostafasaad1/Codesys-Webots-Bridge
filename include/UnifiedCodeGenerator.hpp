@@ -380,7 +380,7 @@ public:
         out << "\n";
 
         out << "    // Connect to CODESYS\n";
-        out << "    while (!client.Connect(L\"GlobalLibMem\")) {\n";
+        out << "    while (!client.Connect(L\"OKZiJMksN52vWF53\")) {\n";
         out << "        cout << \"Waiting for CODESYS...\" << endl;\n";
         out << "        robot->step(TIME_STEP);\n";
         out << "    }\n";
@@ -445,7 +445,7 @@ public:
         out << "   fbShm(\n";
         out << "       pData := ADR(data),\n";
         out << "       DataSize := SIZEOF(ST_" << memoryName << "),\n";
-        out << "       sMemoryName := 'GlobalLibMem',\n";
+        out << "       sMemoryName := 'OKZiJMksN52vWF53',\n";
         out << "       Enable := TRUE\n";
         out << "   );\n";
         out << "   ```\n\n";
@@ -458,7 +458,7 @@ public:
         out << "2. **Use client:**\n";
         out << "   ```cpp\n";
         out << "   " << memoryName << "Client client;\n";
-        out << "   client.Connect(L\"GlobalLibMem\");\n";
+        out << "   client.Connect(L\"OKZiJMksN52vWF53\");\n";
         out << "   \n";
         out << "   auto* data = client.GetData();\n";
         out << "   client.Sync();\n";

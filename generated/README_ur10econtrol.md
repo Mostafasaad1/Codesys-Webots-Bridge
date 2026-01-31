@@ -26,7 +26,7 @@ Auto-generated from JSON schema by Program12 Unified Generator
    fbShm(
        pData := ADR(data),
        DataSize := SIZEOF(ST_UR10eControl),
-       sMemoryName := 'GlobalLibMem',
+       sMemoryName := 'OKZiJMksN52vWF53',
        Enable := TRUE
    );
    ```
@@ -41,7 +41,7 @@ Auto-generated from JSON schema by Program12 Unified Generator
 2. **Use client:**
    ```cpp
    UR10eControlClient client;
-   client.Connect(L"GlobalLibMem");
+   client.Connect(L"OKZiJMksN52vWF53");
    
    auto* data = client.GetData();
    client.Sync();

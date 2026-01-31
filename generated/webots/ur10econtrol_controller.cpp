@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     Motor *wrist_3_joint_motor = robot->getMotor("wrist_3_joint");
 
     // Connect to CODESYS
-    while (!client.Connect(L"GlobalLibMem")) {
+    while (!client.Connect(L"OKZiJMksN52vWF53")) {
         cout << "Waiting for CODESYS..." << endl;
         robot->step(TIME_STEP);
     }

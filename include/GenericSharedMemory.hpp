@@ -41,7 +41,7 @@ public:
 
     /**
      * Connect to shared memory
-     * @param name Shared memory name (e.g., L"GlobalLibMem")
+     * @param name Shared memory name (e.g., L"OKZiJMksN52vWF53")
      * @param size Total size of structure in bytes
      * @return true if connected successfully
      */

@@ -1,4 +1,6 @@
-# Unified Robot Code Generator
+# Codesys-Webots Bridge
+
+![Logo](Media/Logo.png)
 
 **One Command → Everything!**
 
@@ -11,8 +13,22 @@
 
 **Generate files:**
 ```powershell
-.\RobotCodeGenerator.exe schemas\puma560.json
+.\CodesysWebotsBridge.exe schemas\puma560.json
 ```
+
+## Demos
+
+### 1. Puma560 Control from CODESYS
+Direct control of Puma560 joints from CODESYS.
+<video src="Media/preview.mp4" controls width="100%"></video>
+
+### 2. Puma Jogging with Robotics Library
+Using CODESYS SoftMotion/Robotics library for jogging & HMI ( forward kinematics [x,y,z, roll, pitch, yaw]).
+<video src="Media/preview2.mp4" controls width="100%"></video>
+
+### 3. Dual UR10e Control
+Controlling two UR10e robots simultaneously from a single CODESYS session.
+<video src="Media/preview3.mp4" controls width="100%"></video>
 
 ## Output Structure
 
@@ -23,15 +39,22 @@ src/                ← Source code (.cpp)
 include/            ← Header files (.hpp)
 build/              ← Compilation artifacts
 Makefile            ← Build script
-RobotCodeGenerator.exe ← Main executable
+CodesysWebotsBridge.exe ← Main executable
 ```
 
 ## Building
 
 ```powershell
+# Option 1: Using Make (if installed)
 make
-# OR
-g++ -std=c++17 -Iinclude -o RobotCodeGenerator.exe src/main.cpp
+
+# Option 2: Using build script (Windows Bundle)
+.\build.bat
+
+# Option 3: Manual Command
+windres src/resource.rc -O coff -o build/resource.o
+g++ -std=c++17 -Iinclude -o CodesysWebotsBridge.exe src/main.cpp build/resource.o
+```
 ```
 
 ## Quick Start
@@ -40,14 +63,17 @@ g++ -std=c++17 -Iinclude -o RobotCodeGenerator.exe src/main.cpp
 ## Complete Workflow
 
 1. **Setup** (once): `.\setup.ps1`
-2. **Generate**: `.\unified_codegen.exe schemas\puma560.json`
-3. **CODESYS**: Import `generated/codesys/*.xml`
-4. **Webots**: Copy `generated/webots/*` to controller directory
+2. **Write Your Robot JSON schema**: `schemas\YourRobot.json`
+3. **Generate**: `.\CodesysWebotsBridge.exe schemas\YourRobot.json`
+4. **CODESYS**: Import `generated/codesys/*.xml` & add ToWebots Library to your project 
+5. **Webots**: Copy `generated/webots/*` to controller directory
+6. **Docs**: Follow Auto Generated Documentation in `generated/` for your robot
 
 ## Files
 
-- `UnifiedCodeGenerator.hpp` - Generator implementation
-- `unified_codegen.exe` - Main executable  
+- `src/` - Source code (`main.cpp`)
+- `include/` - Header files (`UnifiedCodeGenerator.hpp`, etc.)
+- `CodesysWebotsBridge.exe` - Main executable  
 - `setup.ps1` - Create output directories
 - `schemas/` - Example JSON schemas
 
@@ -57,7 +83,7 @@ g++ -std=c++17 -Iinclude -o RobotCodeGenerator.exe src/main.cpp
 ✅ Organized output structure  
 ✅ C++ and Webots files together  
 ✅ Auto-generated documentation
-
+✅ You can add your custom robot to Webots and drive it from codesys as well
 ---
 
 **Troubleshooting:**
