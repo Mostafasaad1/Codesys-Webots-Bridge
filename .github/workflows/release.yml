@@ -27,6 +27,7 @@ jobs:
       - name: Build with Make
         shell: msys2 {0}
         run: |
+          mkdir -p build
           make
 
       - name: Release
