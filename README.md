@@ -79,21 +79,34 @@ The tool organizes generated files into a clean structure:
 ### Puma560 Control
 *Direct joint control from CODESYS*
 <br/>
-<video src="Media/preview.mp4" controls width="80%"></video>
+
+
+
+https://github.com/user-attachments/assets/9b51d8b7-960c-43d7-a0d2-ad18b9b15e18
+
+
 
 <br/>
 
 ### Robotics Library Jogging
 *Inverse kinematics and jogging with CODESYS SoftMotion*
 <br/>
-<video src="Media/preview2.mp4" controls width="80%"></video>
+
+
+
+https://github.com/user-attachments/assets/e0d88451-1f86-423c-9b35-09b92abbcae5
+
+
 
 <br/>
 
 ### Dual UR10e Control
 *Synchronized control of two robots*
 <br/>
-<video src="Media/preview3.mp4" controls width="80%"></video>
+
+
+https://github.com/user-attachments/assets/1c7c704d-996b-4e25-90c2-b78c4261de55
+
 
 </div>
 
